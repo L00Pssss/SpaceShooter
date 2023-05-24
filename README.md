@@ -2,7 +2,7 @@
 
 # Ver 0.50
 
-# The game will be reworked or updated.
+# work with participles system, scriptable object, state machine, conditions for passing the level.
 
 # Android Version
 
