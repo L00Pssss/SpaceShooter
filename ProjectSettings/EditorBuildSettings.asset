@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scane_01.unity
     guid: 42ec9f1e0c3142542a11c790e335d5ec
+  - enabled: 1
+    path: Assets/Scenes/Scane_02.unity
+    guid: 206375fa610564542a2c6ebd64257799
+  - enabled: 1
+    path: Assets/Scenes/Scane_03.unity
+    guid: 5b8d22a23606fcf44b29a6a585ea4a98
   m_configObjects: {}

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace SpaceShooter
@@ -37,6 +34,8 @@ namespace SpaceShooter
 
         public void AdvanceLevel()
         {
+            LevelStatistics.Reset();
+
             CurrentLevel++;
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)
@@ -51,8 +50,19 @@ namespace SpaceShooter
 
         public void FinishCurrentLevel(bool success)
         {
-            if (success)
-                AdvanceLevel();
+           LastLevelResult = success;
+           CalculateLevelStatistic();
+
+            ResultPanelController.Instance.ShowResults(LevelStatistics, success);
+
+        }
+
+        private void CalculateLevelStatistic()
+        {
+            LevelStatistics.score = Player.Instance.Score;
+            LevelStatistics.numKills = Player.Instance.NumKills;
+            LevelStatistics.time = (int)LevelController.Instance.LevelTime;
         }
     }
+
 }

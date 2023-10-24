@@ -93,7 +93,6 @@ namespace SpaceShooter {
                 if (entity.TeamId == m_SpaceShip.TeamId) continue;
 
                 float distance = Vector2.Distance(m_SpaceShip.transform.position, entity.transform.position);
-                Debug.Log(distance + "1");
                 if (distance < maxDist)
                 {
                     maxDist = distance;
@@ -104,7 +103,6 @@ namespace SpaceShooter {
                 {
                     maxDist = 30;
                 }
-                Debug.Log(distance);
             }
             return potentialTarget;
 

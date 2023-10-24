@@ -36,6 +36,5 @@ namespace SpaceShooter
             MainMenuController.Instance.gameObject.SetActive(true);
         }
 
-
     }
 }

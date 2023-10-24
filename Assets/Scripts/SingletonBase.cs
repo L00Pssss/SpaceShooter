@@ -1,26 +1,39 @@
 using UnityEngine;
 
-[DisallowMultipleComponent]
-public abstract class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
+namespace SpaceShooter
 {
-    [Header("Singleton")]
-    [SerializeField] private bool m_DoNotDestroyOnLoad;
-
-    public static T Instance { get; private set; }
-
-    protected virtual void Awake()
+    [DisallowMultipleComponent]
+    public abstract class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
     {
-        if (Instance != null)
+        [Header("Singleton")]
+        [SerializeField] private bool m_DoNotDestroyOnLoad;
+        /// <summary>
+        /// Singleton instance. May be null if DoNotDestroyOnLoad flag was not set.
+        /// </summary>
+        public static T Instance { get; private set; }
+
+
+        /// <summary>
+        /// Singleton instance. May be null if DoNotDestroyOnLoad flag was not set.
+        /// </summary>
+        /// 
+        #region Unity events
+        protected virtual void Awake()
         {
-            Debug.LogWarning("MonoSingleton: object of type already exists, instance will be destroyed = " 
-                + typeof(T).Name);
-            Destroy(this);
-            return;
+            if (Instance != null)
+            {
+                Debug.LogWarning("MonoSingleton: object of type already exists, instance will be destroyed = "
+                    + typeof(T).Name);
+                Destroy(this);
+                return;
+            }
+
+            Instance = this as T;
+
+            if (m_DoNotDestroyOnLoad)
+                DontDestroyOnLoad(gameObject);
         }
 
-        Instance = this as T;
-
-        if (m_DoNotDestroyOnLoad)
-            DontDestroyOnLoad(gameObject);
+        #endregion
     }
 }

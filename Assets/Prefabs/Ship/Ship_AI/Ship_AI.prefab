@@ -700,6 +700,7 @@ MonoBehaviour:
   m_Mobility: 2000
   m_MaxLinearVelocity: 15
   m_MaxAngularVelocity: 360
+  m_PreviewImage: {fileID: 0}
   Trail: {fileID: 2431435364644596933}
   m_Turrets:
   - {fileID: 2431435364576764688}
@@ -720,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df5514ad58dfaf48b6b4e780c23cbb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VelocityDamageModifier: 0
+  m_VelocityDamageModifier: 50
   m_DamageConstant: 50
 --- !u!114 &7584629619416571413
 MonoBehaviour:

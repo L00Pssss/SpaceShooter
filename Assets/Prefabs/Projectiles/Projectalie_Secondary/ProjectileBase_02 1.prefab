@@ -47,7 +47,7 @@ MonoBehaviour:
   m_NickName: 
   m_Velocity: 20
   m_Lifetime: 10
-  m_Damage: 1
+  m_Damage: 100
   m_impactEffectPrefab: {fileID: 0}
   m_AOE: 0
   m_isHoming: 0

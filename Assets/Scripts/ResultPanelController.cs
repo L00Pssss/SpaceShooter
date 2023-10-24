@@ -8,6 +8,7 @@ namespace SpaceShooter
         [SerializeField] private Text m_Kills;
         [SerializeField] private Text m_Score;
         [SerializeField] private Text m_Time;
+        [SerializeField] private Text m_bonus;
 
         [SerializeField] private Text m_Result;
 
@@ -24,10 +25,16 @@ namespace SpaceShooter
         {
             gameObject.SetActive(true);
 
+            if (levelResults.time > 1)
+            {
+                levelResults.bonus = 200;
+            }
+
             m_Success = success;
             m_Kills.text = "Kills : " + levelResults.numKills.ToString();
             m_Score.text = "Score : " + levelResults.score.ToString();
-            m_Time.text = "Time : " + levelResults.time.ToString();
+            m_Time.text =  "Time : " + levelResults.time.ToString();
+            m_bonus.text = "Bonus : " + levelResults.bonus.ToString();
             m_Result.text = success ? "WIin" : "Lose";  // если положительное, если отрецальное то 
             m_ButtontNextText.text = success ? "Next" : "Restart";
 

@@ -46,7 +46,7 @@ namespace SpaceShooter
 
                 m_Ship = newPlayerShip.GetComponent<SpaceShip>();
 
-                m_teleport.SetShip(m_Ship);
+                m_teleport?.SetShip(m_Ship);
 
                 m_Ship.EventOnDeath.AddListener(OnShopDeath);
 
